@@ -13,12 +13,8 @@ export class TodosComponent implements OnInit {
 
   ngOnInit() {
     for (let x = 0; x < 5; x++) {
-      this.todos.push({
-        id: x,
-        title: `Title ${x}`,
-        date: new Date().toDateString(),
-        completed: false
-      });
+      let todo = new Todo(x, `Title ${x}`, new Date(), x, false);
+      this.todos.push(todo);
     }
 
     this.todos.map(n => {
